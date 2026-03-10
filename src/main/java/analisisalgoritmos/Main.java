@@ -21,7 +21,7 @@ public class Main {
         System.out.println("Arreglo original:");
         Ordenamientos.imprimirArreglo(arreglo);
 
-        Ordenamientos.bubbleSort(arreglo);
+        Ordenamientos.selectionSort(arreglo);
 
         System.out.println("Arreglo ordenado:");
         Ordenamientos.imprimirArreglo(arreglo);

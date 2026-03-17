@@ -54,6 +54,29 @@ public class Ordenamientos {
     }
     }
     
+    // Metodo que ordena un arreglo de enteros usando el algoritmo Insertion Sort
+    public static void insertionSort(int[] arr) { // 1 + 4n + 3n2 => O(n2)
+    int n = arr.length; // 1
+
+    // Recorre el arreglo desde la segunda posición
+    for (int i = 1; i < n; i++) { // n
+        // Guarda el valor actual que se va a insertar en su posición correcta
+        int key = arr[i]; // n
+
+        // Inicializa j con la posición anterior
+        int j = i - 1; // n
+
+        // Desplaza los elementos mayores que key una posición a la derecha
+        while (j >= 0 && arr[j] > key) { // n2
+            arr[j + 1] = arr[j]; // n2
+            j = j - 1; // n2
+        }
+
+        // Inserta key en la posición correcta
+        arr[j + 1] = key; // n
+    }
+}
+    
     // Metodo para imprimir los elementos del arreglo
     public static void imprimirArreglo(int[] arreglo) {
         for (int num : arreglo) {

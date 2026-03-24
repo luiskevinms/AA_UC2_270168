@@ -77,6 +77,51 @@ public class Ordenamientos {
     }
 }
     
+    // Metodo principal para ordenar un arreglo usando Quick Sort
+public static void quickSort(int[] arr) { // 1
+    quickSort(arr, 0, arr.length - 1); // 1
+}
+
+// Metodo recursivo de Quick Sort
+public static void quickSort(int[] arr, int inicio, int fin) { 
+    if (inicio < fin) { // 
+        int pivoteIndice = particion(arr, inicio, fin); // n
+
+        // Ordena el subarreglo izquierdo
+        quickSort(arr, inicio, pivoteIndice - 1); // T(n/2)
+
+        // Ordena el subarreglo derecho
+        quickSort(arr, pivoteIndice + 1, fin); // T(n/2)
+    }
+
+    // 2T(n/2) + n
+    // Complejidad temporal promedio: O(n log n)
+    // Peor caso: O(n^2)
+}
+
+// Metodo que coloca el pivote en su posicion correcta
+public static int particion(int[] arr, int inicio, int fin) { // 6 +5n => O(n)
+    int pivote = arr[fin]; // 1
+
+    int i = inicio - 1; // 1
+
+    for (int j = inicio; j < fin; j++) { // n
+        if (arr[j] < pivote) { // n
+            i++; // n
+
+            int temp = arr[i]; // n
+            arr[i] = arr[j]; // n
+            arr[j] = temp; // n
+        }
+    }
+
+    int temp = arr[i + 1]; // 1
+    arr[i + 1] = arr[fin]; // 1
+    arr[fin] = temp; // 1
+
+    return i + 1; // 1
+}
+    
     // Metodo para imprimir los elementos del arreglo
     public static void imprimirArreglo(int[] arreglo) {
         for (int num : arreglo) {

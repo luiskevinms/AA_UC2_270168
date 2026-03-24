@@ -16,12 +16,12 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int[] arreglo = {10, 4, 24, 3, 8, 12};
+        int[] arreglo = {4, 2, 4, 3, 1, 4};
 
         System.out.println("Arreglo original:");
         Ordenamientos.imprimirArreglo(arreglo);
 
-        Ordenamientos.insertionSort(arreglo);
+        Ordenamientos.quickSort(arreglo);
 
         System.out.println("Arreglo ordenado:");
         Ordenamientos.imprimirArreglo(arreglo);
